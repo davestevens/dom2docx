@@ -1,0 +1,16 @@
+{
+  "name": "dom2docx",
+  "version": "0.0.0",
+  "description": "dom2docx",
+  "author": "Dave Stevens <dave@crowdlab.com>",
+  "scripts": {
+    "test": "mocha-phantomjs ./test/index.html"
+  },
+  "devDependencies": {
+    "chai": "^1.10.0",
+    "jquery": "^2.1.1",
+    "mocha": "^2.0.1",
+    "mocha-phantomjs": "^3.5.1",
+    "requirejs": "^2.1.15"
+  }
+}
