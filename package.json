@@ -11,6 +11,7 @@
     "jquery": "^2.1.1",
     "mocha": "^2.0.1",
     "mocha-phantomjs": "^3.5.1",
-    "requirejs": "^2.1.15"
+    "requirejs": "^2.1.15",
+    "requirejs-text": "^2.0.12"
   }
 }

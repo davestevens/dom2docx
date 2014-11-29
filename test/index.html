@@ -19,11 +19,13 @@
       require.config({
         baseUrl: "../src",
         paths: {
-          "jquery": "../node_modules/jquery/dist/jquery"
+          "jquery": "../node_modules/jquery/dist/jquery",
+          "text": "../node_modules/requirejs-text/text",
+          "jszip": "../vendor/jszip"
         }
       });
 
-      require(["../test/src/dom2docxml_spec", "../test/src/dom2docxml/paragraphs_spec", "../test/src/dom2docxml/headings_spec", "../test/src/dom2docxml/formatting_spec", "../test/src/dom2docxml/lists_spec", "../test/src/docxml/node_list_spec", "../test/src/xml/element_spec", "../test/src/xml/xml_spec"], function() {
+      require(["../test/src/docx_spec", "../test/src/docx/zip_spec", "../test/src/dom2docxml_spec", "../test/src/dom2docxml/paragraphs_spec", "../test/src/dom2docxml/headings_spec", "../test/src/dom2docxml/formatting_spec", "../test/src/dom2docxml/lists_spec", "../test/src/docxml/node_list_spec", "../test/src/xml/element_spec", "../test/src/xml/xml_spec"], function() {
         if (window.mochaPhantomJS) { mochaPhantomJS.run(); }
         else { mocha.run(); }
       });
