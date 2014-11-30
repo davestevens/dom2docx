@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://rawgithub.com/davestevens/dom2docx/master/dist/dom2docx.min.js"></script>
+    <script src="https://rawgithub.com/davestevens/dom2docx/master/vendor/FileSaver.js"></script>
+    <link href="example.css" media="all" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <h1>dom2docx.js</h1>
+    An example page to show how to use the dom2docx script.<br>
+    The div below (#input) is passed to Dom2Docx and a Docx file is generated and downloaded
+    <div id="js-create">
+      <button id="create">Create Docx File</button>
+    </div>
+    <a href="https://github.com/davestevens/dom2docx" target="_blank">View on Github</a>
+
+    <script src="example.js"></script>
+
+    <div id="input" class="well">
+      <h1>Paragraphs</h1>
+      <p>Example paragraph with some <b>bold</b> text, some <i>italic</i> text, some <u>underlined</u> text, and some <strike>strikethrough</strike> text. You can also <mark>highlight</mark> text and change the baseline and set the text to <sup>superscript</sup> or <sub>subscript</sub>. Oh, yeah, and you can set the text size to <small>small</small>.</p>
+
+      <h1>Lists</h1>
+      <h2>Unordered List</h2>
+      <ul>
+        <li>List Item 1</li>
+        <li>List Item 2</li>
+        <li>List Item 3</li>
+      </ul>
+
+      <h2>Description List</h2>
+      <dl>
+        <dt>Description Term 1</dt>
+        <dd>Description Description 1</dd>
+        <dt>Description Term 2</dt>
+        <dd>Description Description 2</dd>
+      </dl>
+    </div>
+
+    Script File:
+    <pre>
+      create = document.getElementById("create");
+
+      create.addEventListener("click", function() {
+        // #input element in dom contains data which is to be converted to .docx
+        input = document.getElementById("input");
+
+        // Create instance on Dom2Docx
+        dom2docx = new Dom2Docx(input);
+
+        // Creates the dom to a File Blob object
+        docx = dom2docx.create();
+
+        // you can use `URL.createObjectURL` to create
+        link = document.createElement("a");
+        link.href = (window.URL || window.webkitURL).createObjectURL(docx);
+        link.download = "example.docx";
+        link.textContent = "Download File";
+        document.getElementById("js-create").appendChild(link);
+
+        // Using FileSaver
+        saveAs(docx, "example.docx");
+      });
+    </pre>
+  </body>
+</html>
