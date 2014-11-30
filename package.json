@@ -1,6 +1,6 @@
 {
   "name": "dom2docx",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "dom2docx",
   "author": "Dave Stevens <dave@crowdlab.com>",
   "repository" : {
