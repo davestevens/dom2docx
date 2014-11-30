@@ -1,12 +1,12 @@
-define ["docx/manifest", "docx/zip", "dom2docxml", "jquery"],
-(DocxManifest, DocxZip, Dom2DocXML, $) ->
+define ["docx/manifest", "docx/zip", "dom2docxml", "utils"],
+(DocxManifest, DocxZip, Dom2DocXML, utils) ->
   class Docx
     constructor: (dom, manifest = {}) ->
       @dom = dom
-      @manifest = $.extend(true, DocxManifest, manifest)
+      @manifest = utils.merge(DocxManifest, manifest)
 
     create: ->
-      $.extend(true, @manifest, directories: {
+      @manifest = utils.merge(@manifest, directories: {
         word:
           files:
             "document.xml": @_build_document()
