@@ -1,6 +1,6 @@
 define ["docxml/node_list", "docxml/wrapper", "xml/element", "xml/xml"],
 (DocXMLNodeList, DocXMLWrapper, XMLElement, XML) ->
-  class Document
+  class Dom2DocXML
     constructor: (dom) ->
       @dom = dom
       @xml = @_create_xml()

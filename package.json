@@ -3,11 +3,20 @@
   "version": "0.0.0",
   "description": "dom2docx",
   "author": "Dave Stevens <dave@crowdlab.com>",
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/davestevens/dom2docx.git"
+  },
   "scripts": {
-    "test": "mocha-phantomjs ./test/index.html"
+    "test": "mocha-phantomjs ./test/index.html",
+    "test-server": "http-server",
+    "build-js": "make build && r.js -o build.js",
+    "build-js-dev": "make build && r.js -o build.js out='dist/dom2docx.js' optimize=none"
   },
   "devDependencies": {
+    "almond": "^0.3.0",
     "chai": "^1.10.0",
+    "http-server": "^0.7.3",
     "jquery": "^2.1.1",
     "mocha": "^2.0.1",
     "mocha-phantomjs": "^3.5.1",

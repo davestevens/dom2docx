@@ -1,6 +1,6 @@
 define ["docx/manifest", "docx/zip", "dom2docxml", "utils"],
 (DocxManifest, DocxZip, Dom2DocXML, utils) ->
-  class Docx
+  class Dom2Docx
     constructor: (dom, manifest = {}) ->
       @dom = dom
       @manifest = utils.merge(DocxManifest, manifest)
