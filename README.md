@@ -15,7 +15,7 @@ Description List (dl), Description Term (dt), Description Description (dd)
 
 ## Usage
 
-TODO: example page
+See http://davestevens.github.io/dom2docx/ for example
 
 ### Convert dom element to .docx File
 ```
@@ -60,8 +60,8 @@ page (see `Compilation` section)
 - Styles
  - [ ] Tables
  - [ ] Forms
-- [ ] Example Usage
-- [ ] gh-pages
+- [x] Example Usage
+- [x] gh-pages
 - [ ] How to Replace Styles
 
 ## Compilation
